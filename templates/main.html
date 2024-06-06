@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {{ title }} {% endblock %} </title>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 40px;">Добро пожаловать на главную страницу</h1>
+    <form style="text-align:center" action="{{ url_for('check_color') }}" method="GET">
+        <button type="submit">Перейти к просмотру</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {{ title }} {% endblock %} </title>
+</head>
+<body>
+{% block menu %}
+<ul>
+    <li><a href="{{ url_for('history') }}">История</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+    <h1 style="text-align:center">Просмотр доступных цветов</h1>
+    <form action="/return_color" method="GET" style="text-align:center">
+        <input type="text" name="query" placeholder="Поиск">
+        <button type="submit">Поиск</button>
+    </form>
+    <form action="/return_color" method="POST" style="text-align:center">
+        <label for="selection">Выберите цвет, вывод который вы хотите увидеть</label>
+        <select name="selection" id="selection">
+            <option value="красный">Красный</option>
+            <option value="зеленый">Зелёный</option>
+            <option value="черный">Чёрный</option>
+        </select>
+        <button type="submit">Выбрать</button>
+    </form>
+{% endblock %}
+</body>
+</html>

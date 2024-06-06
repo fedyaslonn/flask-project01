@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {{ title }} {% endblock %} </title>
+    <style>
+        body {
+            {% if not back_size %}
+                background-color: {% if color == 'черный' %}black
+                             {% elif color == 'красный' %}red
+                             {% elif color == 'зеленый' %}green
+                             {% else %}white
+                             {% endif %};
+                color: {% if color == 'черный' %}white{% else %}black{% endif %};
+            {% endif %}
+            {% if back_size %}
+            background-size: {{ back_size }};
+            background-color: {% if color == 'черный' %}black
+                             {% elif color == 'красный' %}red
+                             {% elif color == 'зеленый' %}green
+                             {% else %}white
+                             {% endif %};
+                color: {% if color == 'черный' %}white{% else %}black{% endif %};
+            {% endif %}
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">Вы выбрали цвет {{ color }}</h1>
+</body>
+</html>
